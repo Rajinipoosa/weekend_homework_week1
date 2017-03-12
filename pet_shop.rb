@@ -18,13 +18,13 @@ end
      else
        value = pet_shop[:admin][:total_cash] - 10
        return value
-    end
-end
+   end
+ end     
 def pets_sold(pet_shop)
 
    return pet_shop[:admin][:pets_sold]
 
- end
+end
  def increase_pets_sold (pets_shop,num)
    pets_result = pets_shop[:admin][:pets_sold] + num
    return pets_result
@@ -42,12 +42,18 @@ def pets_by_breed(pet_shop,breed)
    for pet in pets
       if pet[:breed] == breed
          result<<pet
-
+       
       end 
-    end
+   end
   return result
       
 end
+
+
+
+
+
+
 
 def find_pet_by_name(pet_shop, name)
    result = []
@@ -71,25 +77,26 @@ end
 
     return
  end
- # def find_pet_by_name(pet_shop,name)
- #     # result = []
- #    pets = pet_shop[:pets]
+  def remove_pet_by_name(pet_shop,name)
+      result = []
+     pets = pet_shop[:pets]
   
- #   # for pet in pets
- #   #   if pet[:name] == name
-           
- #   #          pet.delete(pet[:name])
- #   #         return pet
- #   #   end
- #   # end
- #   # return 
- # end
+       for pet in pets
+         if pet[:name] == name
+           pet[:name].delete(name)
+           pet[:name].length()
+            return
+            end
+         end
+       
+     return 
+  end
 def add_pet_to_stock(pet_shop,num)
   
   
   value = pet_shop[:pets].length + num
     return value
-  end
+end
 
   def customer_pet_count(customer)
   
@@ -115,6 +122,12 @@ def add_pet_to_stock(pet_shop,num)
 
        
   end
+
+  def sell_pet_to_customer(pet_shop,pet,customer)
+    
+
+  end
+
 
 
 
